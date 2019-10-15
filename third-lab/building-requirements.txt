@@ -1,0 +1,19 @@
+Building
+	- adress: Adress
+		- setAdress(Address address)
+	- floors: Floor[]
+		- addFloor(Floor floor)
+
+Adress
+	- street: String
+	- number: Integer
+	- city: String
+
+Floor
+	- number: Integer
+	- rooms: Room[]
+		- addRoom(Room room)
+
+Room
+	- number: Integer
+	- area: Double
