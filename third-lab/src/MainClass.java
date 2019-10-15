@@ -1,21 +1,22 @@
+import building.Building;
+import building.Floor;
+import building.Room;
+
 public class MainClass {
 
 	public static void main(String[] args) {
-//		Phone pixel = new Phone();
-//		pixel.brandName = "pixel-here";
-//		System.out.println(pixel.brandName);
-		Phone nexus = new Phone("nexus");
-		Phone pixel = new Phone();
-		pixel.brandName = "pixel";
-		System.out.println(nexus.brandName);
-		System.out.println(pixel.brandName);
+		Room room = new Room();
+		room.number = 10;
+		Floor floor = new Floor();
+		floor.addRoom(room);
+		Building building = new Building();
+		building.addFloor(floor);
 		
-		pixel.turnOn();
-		nexus.turnOn();
+		room.number = 200;
 		
-		pixel.brandName = "pixel";
-		pixel.changeName(pixel);
-		System.out.println("~~" + pixel.brandName);;
+		System.out.println(building.floors[0].rooms[0].number);
+		
+		building.describeYourself();
 	}
 
 }
