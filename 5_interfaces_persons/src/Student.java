@@ -1,23 +1,16 @@
 
-public class Student extends Person implements Saveable, Identifiable {
+public class Student implements Identifiable, Saveable {
 
-	@Override
-	public void sayHello() {
-		System.out.println("Student says hello");
-		
-	}
-
-	@Override
-	public void sayGoodbye() {
-		System.out.println("Student says goodbye");
-		
-	}
-
-	@Override
-	public void save() {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void sayHello() {
+//		System.out.println("Student says hello");
+//	}
+//
+//	@Override
+//	public void sayGoodbye() {
+//		System.out.println("Student says goodbye");
+//		
+//	}
 
 	@Override
 	public Long getId() {
@@ -25,4 +18,9 @@ public class Student extends Person implements Saveable, Identifiable {
 		return null;
 	}
 
+	@Override
+	public void save() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -1,5 +1,5 @@
 
-public class Employee extends Person {
+public class Employee extends Person implements Identifiable {
 
 	@Override
 	public void sayHello() {
@@ -11,4 +11,12 @@ public class Employee extends Person {
 		System.out.println("Employee says goodbye");
 		
 	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
 }

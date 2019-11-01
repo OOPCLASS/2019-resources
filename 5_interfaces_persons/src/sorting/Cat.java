@@ -17,5 +17,4 @@ public class Cat implements Comparable {
 		// ((Cat) objectToCompareWith).getName() == this.name;
 		return 0;
 	}
-
 }
