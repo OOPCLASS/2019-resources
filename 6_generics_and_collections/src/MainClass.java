@@ -34,6 +34,17 @@ public class MainClass {
 		mySet.size();
 		
 		Collections.sort(stringsList);
-		Map<String, Object> map = new HashMap<>();
+		Map<String, List<Watch>> map = new HashMap<>();
+
+//		"a" -> {"alpha", "aro", "abc"}
+//		"b" -> {}
+//		
+//		// all watches.. 
+//		// watchesUnderAHundredRON
+//		// watchesOverAHundredRON
+		
+		// read about java streams
+		
+		
 	}
 }
