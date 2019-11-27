@@ -44,10 +44,14 @@ public class DBConnector {
 	 * @return {@link ResultSet}
 	 * @throws SQLException .
 	 */
-	public ResultSet executeQuery(String query) throws SQLException {
-		try (Statement stmt = connection.createStatement()) {
+	public ResultSet executeQuery(String query) {
+		try {
+			Statement stmt = connection.createStatement();
 			return stmt.executeQuery(query);
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	/**
@@ -58,9 +62,13 @@ public class DBConnector {
 	 *         statements or (2) 0 for SQL statements that return nothing
 	 * @throws SQLException .
 	 */
-	public int executeUpdate(String query) throws SQLException {
-		try (Statement stmt = connection.createStatement()) {
+	public int executeUpdate(String query) {
+		try {
+			Statement stmt = connection.createStatement();
 			return stmt.executeUpdate(query);
+		} catch(SQLException e) {
+			e.printStackTrace();
 		}
+		return 0;
 	}
 }
