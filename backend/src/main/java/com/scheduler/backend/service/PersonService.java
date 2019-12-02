@@ -27,7 +27,7 @@ public class PersonService implements Service<Person> {
 	@Override
 	public List<Person> findAll() {
 		// call findAll on repository
-		return null;
+		return personRepository.findAll();
 	}
 
 	@Override
