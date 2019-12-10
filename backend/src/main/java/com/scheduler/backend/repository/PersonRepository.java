@@ -3,7 +3,11 @@ package com.scheduler.backend.repository;
 import java.sql.ResultSet;
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+
 import com.scheduler.backend.model.Person;
+import com.scheduler.backend.service.HibernateService;
 import com.scheduler.backend.transformer.PersonTransformer;
 
 public class PersonRepository implements Repository<Person> {
@@ -15,6 +19,11 @@ public class PersonRepository implements Repository<Person> {
 	}
 	
 	public Person save(Person entity) {
+		Session databaseSession = HibernateService.getSessionFactory().openSession();
+		databaseSession.beginTransaction();
+		databaseSession.saveOrUpdate(entity);
+		databaseSession.getTransaction().commit();
+		
 		// Some words about entity.getId():
 		//   if the id is null it means we want to create a new db entry (INSERT statement)
 		//   if the id is non-null it means we want to update a db entry (UPDATE statement)
@@ -24,7 +33,7 @@ public class PersonRepository implements Repository<Person> {
 		// execute query using DBConnector
 		// fetch the just inserted entity with a select statement
 		// transform ResultSet to Person and return it
-		return null;
+		return entity;
 	}
 
 	public Person findById(Long id) {
@@ -35,9 +44,9 @@ public class PersonRepository implements Repository<Person> {
 	}
 
 	public List<Person> findAll() {
-		String allQuery = "SELECT * FROM person";
-		ResultSet result = DBConnector.getInstance().executeQuery(allQuery);
-		return personTransformer.toModelList(result);
+		Session databaseSession = HibernateService.getSessionFactory().openSession();
+		List<Person> result = databaseSession.createCriteria(Person.class).list();
+		return result;
 	}
 
 	public boolean delete(Person entity) {
