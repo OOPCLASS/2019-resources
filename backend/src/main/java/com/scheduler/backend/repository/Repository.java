@@ -2,9 +2,9 @@ package com.scheduler.backend.repository;
 
 import java.util.List;
 
-import com.scheduler.backend.model.Entity;
+import com.scheduler.backend.model.AbstractEntity;
 
-public interface Repository<T extends Entity> {
+public interface Repository<T extends AbstractEntity> {
 
 	T save(T entity);
 	

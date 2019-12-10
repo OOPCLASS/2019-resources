@@ -3,7 +3,9 @@ package com.scheduler.backend.transformer;
 import java.sql.ResultSet;
 import java.util.List;
 
-public interface Transformer<T> {
+import com.scheduler.backend.model.AbstractEntity;
+
+public interface Transformer<T extends AbstractEntity> {
 
 	T toModel(ResultSet resultSet);
 	

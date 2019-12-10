@@ -1,10 +1,20 @@
 package com.scheduler.backend.model;
 
-public class Person extends Entity {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "person")
+public class Person extends AbstractEntity {
+
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private PersonType type;
+	@Column
 	private Long calendarId;
 	
 	public String getFirstName() {

@@ -1,5 +1,5 @@
 package com.scheduler.backend.model;
 
-public class Calendar extends Entity {
+public class Calendar extends AbstractEntity {
 	
 }

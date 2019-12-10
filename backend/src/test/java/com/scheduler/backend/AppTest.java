@@ -1,7 +1,5 @@
 package com.scheduler.backend;
 
-import com.scheduler.backend.repository.DBConnector;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
