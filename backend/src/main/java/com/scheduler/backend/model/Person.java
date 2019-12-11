@@ -2,6 +2,8 @@ package com.scheduler.backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,8 @@ public class Person extends AbstractEntity {
 	private PersonType type;
 	@Column
 	private Long calendarId;
+	@Column(nullable = true)
+	private Integer age;
 	
 	public String getFirstName() {
 		return firstName;

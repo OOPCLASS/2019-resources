@@ -12,5 +12,6 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create</property>
         <mapping class="com.scheduler.backend.model.Person"></mapping>
+        <mapping class="com.scheduler.backend.model.Exam"></mapping>
     </session-factory>
 </hibernate-configuration>
