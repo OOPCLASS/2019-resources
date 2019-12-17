@@ -10,7 +10,7 @@
         <property name="hibernate.connection.password">test</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <mapping class="com.scheduler.backend.model.Person"></mapping>
         <mapping class="com.scheduler.backend.model.Exam"></mapping>
     </session-factory>

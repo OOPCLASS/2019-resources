@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.scheduler.backend.model.Person;
@@ -22,6 +23,7 @@ public class PersonRepository implements Repository<Person> {
 		Session databaseSession = HibernateService.getSessionFactory().openSession();
 		databaseSession.beginTransaction();
 		databaseSession.saveOrUpdate(entity);
+		databaseSession.save(entity);
 		databaseSession.getTransaction().commit();
 		
 		// Some words about entity.getId():
@@ -45,7 +47,8 @@ public class PersonRepository implements Repository<Person> {
 
 	public List<Person> findAll() {
 		Session databaseSession = HibernateService.getSessionFactory().openSession();
-		List<Person> result = databaseSession.createCriteria(Person.class).list();
+		Query query = databaseSession.createQuery("from Person");
+		List<Person> result = query.list();
 		return result;
 	}
 
